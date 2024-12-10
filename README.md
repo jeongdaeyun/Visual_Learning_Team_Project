@@ -25,7 +25,7 @@ Download and place in `Visual-Representation-Learning/` our_train_augment_datase
 Prepare vl checklist dataset as described in https://github.com/om-ai-lab/VL-CheckList/blob/main/DATASETS.md  
 Then move the vl dataset to `Visual-Representation-Learning/vl_datasets/`  
 If you followed the instructions correctly, you should have the following folders inside vl_datasets: **'hake', 'swig', 'vg'**. 
-그리고 ./evaluation을 참고하세요
+Refer to the vl section in ./evaluation and include the dataset. The JSON files in the dataset will be processed one at a time.
 
 First, navigate to the src directory:
 ```shell script
@@ -52,16 +52,28 @@ python3 training/main.py --epochs 25 --name exp_name --lora 4 --batch-size 10 --
 
 ## Evaluation
 ### Run the evaluation script
-####you can download our checkpoints of Visual-Representation-Learning_SAM and Visual-Representation-Learning_LLM from here: https://drive.google.com/drive/folders/1bUpGOa2_tsDlg2B2peVayISbI6epCT1x?usp=sharing
-
-All vl_checklist jsons will be saved in `Visual-Representation-Learning/eval_jsons/clip/exp_name/` and the result will be printed. 
-To prepare the vl checklist evaluate results for the experiment **exp_name** run the following command:
+#### Ours Region Dataset
+1. Please download the dataset from the following link:
+[Dataset Download](https://drive.google.com/drive/folders/1bUpGOa2_tsDlg2B2peVayISbI6epCT1x?usp=sharing)
+2. Place check region_level_dataset the JSON files, images, and model weights in the evaluation
+* evaluation Ours Region:
 ```shell script
-mkdir vl_checklist_accuracy_jsons_folder
-python3 training/main.py  --lora 4 --pretrained openai --eval_vl_cklist --eval_only --resume /path/to/checkpoint --vl_checklist_images_root_folder Visual-Representation-Learning/vl_checklist_images_root_folder/
+python3 evaluation/region_level_dataset/region_level.py
 ```
-
-To print the aro evaluated results for the experiment **exp_name** run the following command:
+#### Global ARO Dataset
+1. If you need to download the ARO Dataset programmatically, you can use a script to automate the process
+2. Place check ARO_dataset the JSON files, images, and model weights in the evaluation
+* evaluation ARO:
 ```shell script
-python3 aro_clip_lora_eval.py  --lora 4 --resume /path/to/checkpoint
+python3 evaluation/ARO_dataset/VG_attribute.py
+python3 evaluation/ARO_dataset/VG_relation.py
+```
+#### Global VL-CheckList Dataset
+1. If you need to download the VL-CheckList Dataset programmatically, you can use a script to automate the process.
+2. Place check VL_checklist_dataset the JSON files, images, and model weights in the evaluation
+* evaluation VL_CheckList:
+```shell script
+python3 evaluation/VL_checklist/VL_object.py
+python3 evaluation/VL_checklist/VL_attribute.py
+python3 evaluation/VL_checklist/VL_relation.py
 ```
