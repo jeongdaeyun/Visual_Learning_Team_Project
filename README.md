@@ -1,5 +1,6 @@
 # Visual-Representation-Learning Team Project
-## ddddddddddddddddddddddddddddddddddddddddddddddddddd 
+## Our Method
+![image](https://github.com/user-attachments/assets/bfb882ee-b454-4c83-a938-6fedbca41cdd)
 
 _______________________________
 ## Environment
