@@ -13,7 +13,7 @@ conda install pytorch==1.12.1 torchvision==0.13.1 cudatoolkit=11.3.1 -c pytorch
 pip install -r requirements.txt
 ```
 
-## Data Preparations and creation 
+## Data Preparations and Creation 
 ### Training Data
 #### Download Ours Data
 Download Ours Dataset training and validation splits from https://drive.google.com/drive/folders/1bUpGOa2_tsDlg2B2peVayISbI6epCT1x?usp=sharing
