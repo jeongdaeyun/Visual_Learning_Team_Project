@@ -46,7 +46,7 @@ To train a network with quality captions and:
 ```shell script
 python3 training/main.py --epochs 25 --name exp_name --lora 4 --batch-size 10 --vl_negs --neg_type rand_both --auto_neg_types NOUN ADP ADJ VERB --mil_batch 10 --pretrained openai
 ```
-## result
+## Result
 ![image](https://github.com/user-attachments/assets/13f87f3a-0e19-4127-a04f-dc67418b9413)
 
 ## Evaluation
