@@ -21,24 +21,21 @@ After data preparation, place the data in `Visual-Representation-Learning/train`
 
 Download and place in `Visual-Representation-Learning/` our_train_augment_dataset.csv and val_with_cap.csv from `Visual-Representation-Learning//VG_data`
 
-### Evaluation data
-Prepare vl checklist dataset as described in https://github.com/om-ai-lab/VL-CheckList/blob/main/DATASETS.md  
-Then move the vl dataset to `Visual-Representation-Learning/vl_datasets/`  
-If you followed the instructions correctly, you should have the following folders inside vl_datasets: **'hake', 'swig', 'vg'**. 
-Refer to the vl section in ./evaluation and include the dataset. The JSON files in the dataset will be processed one at a time.
-
 First, navigate to the src directory:
 ```shell script
 cd src
 ```
 
 ### Evaluation data
+prepare ours dataset (https://drive.google.com/drive/folders/1bUpGOa2_tsDlg2B2peVayISbI6epCT1x?usp=sharing)
+
 Prepare vl checklist dataset as described in https://github.com/om-ai-lab/VL-CheckList/blob/main/DATASETS.md  
-Then move the vl dataset to `Visual-Representation-Learning/vl_checklist_images_root_folder/`  
-If you followed the instructions correctly, you should have the following folders inside vl_datasets: **'hake', 'swig', 'vg'**. 
+vl_datasets: **'hake', 'swig', 'vg'**. 
 
 prepare aro dataset as described in https://github.com/mertyg/vision-language-models-are-bows
-Then move the aro dataset to `Visual-Representation-Learning/aro/` 
+
+1. Place the datasets ours, aro, and vl_checklist in the folder.
+2. Set the path to the datasets in the Python scripts under the evaluation folder.
 
 ### Run the training script
 
@@ -49,6 +46,8 @@ To train a network with quality captions and:
 ```shell script
 python3 training/main.py --epochs 25 --name exp_name --lora 4 --batch-size 10 --vl_negs --neg_type rand_both --auto_neg_types NOUN ADP ADJ VERB --mil_batch 10 --pretrained openai
 ```
+## result
+![image](https://github.com/user-attachments/assets/77cd523c-999f-4ecb-9677-539059e8418e)
 
 ## Evaluation
 ### Run the evaluation script
